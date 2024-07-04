@@ -54,6 +54,9 @@ module "eks" {
     Terraform   = "true"
   }
 }
+output "cluster_id" {
+  value = aws_eks_cluster.eks_cluster.id
+}
 
 data "aws_eks_cluster" "cluster" {
   name = module.eks.cluster_id
