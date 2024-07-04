@@ -1,18 +1,18 @@
 provider "kubernetes" {
   host                   = data.aws_eks_cluster.cluster
-  token =  data.aws_eks_cluster_auth.cluster
+  token                  = data.aws_eks_cluster_auth.cluster
   cluster_ca_certificate = base64decode(data.aws_eks_cluster_auth.cluster)
 }
-  
+
 resource "kubernetes_namespace" "test" {
-    metadata {
-      name = "nginx"
-    }
+  metadata {
+    name = "nginx"
+  }
 }
 
 resource "kubernetes_deployment" "test" {
   metadata {
-    name = "nginx"
+    name      = "nginx"
     namespace = kubernetes_namespace.test.metadata.0.name
   }
 

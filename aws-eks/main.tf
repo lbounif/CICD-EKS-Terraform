@@ -55,7 +55,7 @@ module "eks" {
   }
 }
 output "cluster_id" {
-  value = aws_eks_cluster.eks_cluster.id
+  value = module.eks.cluster_id
 }
 
 data "aws_eks_cluster" "cluster" {
