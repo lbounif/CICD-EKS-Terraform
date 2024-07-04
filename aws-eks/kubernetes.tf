@@ -12,12 +12,12 @@ resource "kubernetes_namespace" "test" {
 
 resource "kubernetes_deployment" "test" {
   metadata {
-    name = "terraform-example"
+    name = "nginx"
     namespace = kubernetes_namespace.test.metadata.0.name
   }
 
   spec {
-    replicas = 3
+    replicas = 2
 
     selector {
       match_labels = {
