@@ -7,6 +7,11 @@ Before starting the project we need to have:
 - AWS CLI configured
 
 ## Step 1: Creating an EC2 instance and deply Jenkins on it using Terraform (Jenkins-server repo)
+- We define first the provider AWS to communicate with Terraform
+- We define the Backend where our artifcats are going to store ( S3 Bucket)
+- Initialize Terraform to check the configuration: #Terraform init
+- Then in Data file we need to define an AMI to be used for EC2 creation
+- Then we define in Main VPC, Security Group and EC2 instances and necessary variables (variables file define variables with thier types where terraform.ftvars define the values of the variables
 ## Step 2: Creating EKS Cluster using Terraform (AWS-EKS)
 ## Step 3: Creation of Jenkins Pipeline (EKS Cluster)
 ## Step 4: Implenting Deployment files (Kubctl)
